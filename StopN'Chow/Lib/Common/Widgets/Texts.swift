@@ -13,7 +13,7 @@ struct Texts: View {
     let fontWeight: Font
     let color: Color
     let alignment: TextAlignment
-    
+
     init(
         _ text: String,
         fontSize: CGFloat = 18,
@@ -27,7 +27,7 @@ struct Texts: View {
         self.color = color
         self.alignment = alignment
     }
-    
+
     var body: some View {
         Text(text)
             .font(fontWeight)

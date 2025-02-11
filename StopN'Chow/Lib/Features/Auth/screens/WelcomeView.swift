@@ -39,10 +39,7 @@ struct WelcomeView: View {
                     NavigationLink {
                         SignIn()
                     } label: {
-                        RoundButton(
-                            action: {},
-                            text: "Get Started"
-                        )
+                        RoundButton(text: "Get Started")
                     }
                     
                     Spacer()

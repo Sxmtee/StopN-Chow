@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import CountryPicker
 
 struct SignIn: View {
     @State private var mobileTextCtrl = ""
+    @State private var isShowing = false
+    @State private var countryObj: Country?
     
     var body: some View {
         NavigationStack {
@@ -39,15 +42,20 @@ struct SignIn: View {
                         
                         HStack {
                             Button {
-                                //code to come
+                                isShowing = true
                             } label: {
-                                Image("")
-                                
-                                Texts(
-                                    "+234",
-                                    fontWeight: .customfont(.medium, fontSize: 18),
-                                    color: Color.primaryText
-                                )
+                                if let countryObj = countryObj {
+                                    Texts(
+                                        "\(countryObj.isoCode.getFlag())",
+                                        fontWeight: .customfont(.medium, fontSize: 35)
+                                    )
+                                    
+                                    Texts(
+                                        "+\(countryObj.phoneCode)",
+                                        fontWeight: .customfont(.medium, fontSize: 18),
+                                        color: Color.primaryText
+                                    )
+                                }
                             }
                             
                             TextField("Enter mobile number", text: $mobileTextCtrl)
@@ -67,14 +75,12 @@ struct SignIn: View {
                         .padding(.bottom, 25)
                         
                         RoundButton(
-                            action: {},
                             backgroundColor: Color(hex: "5383EC"),
                             text: "Continue with Google"
                         )
                         .padding(.bottom, 8)
                         
                         RoundButton(
-                            action: {},
                             backgroundColor: Color(hex: "4A66AC"),
                             text: "Continue with Facebook"
                         )
@@ -84,6 +90,15 @@ struct SignIn: View {
                     .padding(.top, .topInsets +  .screenWidth * 0.6)
                 }
             }
+            .onAppear {
+                self.countryObj = Country(phoneCode: "234", isoCode: "NG")
+            }
+            .sheet(
+                isPresented: $isShowing,
+                content: {
+                    CountryPickerUI(country: $countryObj)
+                }
+            )
             .navigationBarBackButtonHidden(true)
             .toolbar(.hidden)
             .ignoresSafeArea()

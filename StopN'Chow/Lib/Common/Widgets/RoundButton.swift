@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RoundButton: View {
-    let action: () -> Void
+    let action: (() -> Void)?
     let height: CGFloat
     let width: CGFloat
     let backgroundColor: Color
@@ -19,7 +19,7 @@ struct RoundButton: View {
     let font: Font
 
     init(
-        action: @escaping () -> Void,
+        action: (() -> Void)? = nil,
         height: CGFloat = 60,
         width: CGFloat = .infinity, //prev->200
         backgroundColor: Color = Color.primaryApp,
@@ -39,7 +39,7 @@ struct RoundButton: View {
     }
 
     var body: some View {
-        Button(action: action) {
+        Button(action: {action?()} ) {
             Text(text)
                 .font(font)
                 .foregroundColor(textColor)
