@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048ADD582D5F2EC3001BD490 /* SwiftyNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 048ADD572D5F2EC3001BD490 /* SwiftyNetworking */; };
 		04EDC5252D54D5D6001D2D04 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 04EDC5242D54D5D6001D2D04 /* CountryPicker */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048ADD582D5F2EC3001BD490 /* SwiftyNetworking in Frameworks */,
 				04EDC5252D54D5D6001D2D04 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +73,7 @@
 			name = "StopN'Chow";
 			packageProductDependencies = (
 				04EDC5242D54D5D6001D2D04 /* CountryPicker */,
+				048ADD572D5F2EC3001BD490 /* SwiftyNetworking */,
 			);
 			productName = "StopN'Chow";
 			productReference = 0440924C2D538EF400A3F089 /* StopN'Chow.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				04EDC5232D54D5D6001D2D04 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+				048ADD562D5F2EC3001BD490 /* XCRemoteSwiftPackageReference "SwiftyNetworking" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0440924D2D538EF400A3F089 /* Products */;
@@ -349,6 +353,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		048ADD562D5F2EC3001BD490 /* XCRemoteSwiftPackageReference "SwiftyNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/antonio-war/SwiftyNetworking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
 		04EDC5232D54D5D6001D2D04 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mobven/CountryPicker.git";
@@ -360,6 +372,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		048ADD572D5F2EC3001BD490 /* SwiftyNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048ADD562D5F2EC3001BD490 /* XCRemoteSwiftPackageReference "SwiftyNetworking" */;
+			productName = SwiftyNetworking;
+		};
 		04EDC5242D54D5D6001D2D04 /* CountryPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04EDC5232D54D5D6001D2D04 /* XCRemoteSwiftPackageReference "CountryPicker" */;

@@ -11,7 +11,7 @@ import SwiftUI
 struct StopN_ChowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuthView()
         }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "originHash" : "980296c42f1ad539ebe5516f96c24798753843721df3b547edf89f976d4630b9",
+  "originHash" : "f56eef7c6b51b8fb16c2c751cb4ed60a3253311ae71d5b4fafc982f2c9fcca8e",
   "pins" : [
     {
       "identity" : "countrypicker",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "6225c2933fea6abdb8171718b22bbe289706a7aa",
         "version" : "2.0.3"
+      }
+    },
+    {
+      "identity" : "swiftynetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/antonio-war/SwiftyNetworking",
+      "state" : {
+        "revision" : "c66198a58a74f1bce815f30828e3a31ebcc7e70d",
+        "version" : "0.7.0"
       }
     }
   ],

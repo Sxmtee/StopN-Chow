@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Login: View {
     @Environment(\.dismiss) var dismiss
-    @State private var viewModel = LoginViewModel()
+    @State private var viewModel = AuthViewModel()
     
     var body: some View {
         NavigationStack {
@@ -87,45 +87,26 @@ struct Login: View {
                     )
                     .padding(.bottom, .screenWidth * 0.03)
                     
-                    HStack {
-                        Text("Do not have an account?")
-                            .font(.customfont(.semibold, fontSize: 16))
-                            .foregroundStyle(Color.primaryText)
-                        
-                        Button {
-                            //more code to come
-                        } label: {
+                    NavigationLink {
+                        SignUp()
+                    } label: {
+                        HStack {
+                            Text("Do not have an account?")
+                                .font(.customfont(.semibold, fontSize: 16))
+                                .foregroundStyle(Color.primaryText)
+                            
                             Text("Sign up")
                                 .font(.customfont(.semibold, fontSize: 16))
                                 .foregroundStyle(Color.primaryApp)
                         }
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
 
                     Spacer()
                 }
                 .padding(.top, .topInsets + 64)
                 .padding(.horizontal, 20)
                 .padding(.bottom, .bottomInsets)
-                
-                VStack {
-                    HStack {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image("back")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                        }
-                        
-                        Spacer()
-                    }
-                    
-                    Spacer()
-                }
-                .padding(.top, .topInsets)
-                .padding(.horizontal, 20)
             }
             .snackbar(
                 isShowing: $viewModel.showErrorSnackbar,
