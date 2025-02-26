@@ -22,7 +22,7 @@ class AuthViewModel {
     
     var showErrorSnackbar = false
     var showSuccessSnackbar = false
-    var isLoading = false
+    private var isLoading = false
     
     var error: String? {
         didSet {
@@ -41,9 +41,9 @@ class AuthViewModel {
     }
     
     // Validation states
-    var isNameValid = false
-    var isEmailValid = false
-    var isPasswordValid = false
+    private var isNameValid = false
+    private var isEmailValid = false
+    private var isPasswordValid = false
     
     init() {
         validateName()
