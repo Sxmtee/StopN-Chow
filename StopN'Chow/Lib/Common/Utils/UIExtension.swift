@@ -72,6 +72,16 @@ extension CGFloat {
 }
 
 extension Color {
+    func toHexString() -> String {
+        guard let components = self.cgColor?.components, components.count >= 3 else {
+            return "#000000" // Default to black
+        }
+        let r = Int(components[0] * 255)
+        let g = Int(components[1] * 255)
+        let b = Int(components[2] * 255)
+        return String(format: "#%02X%02X%02X", r, g, b)
+    }
+    
     static var primaryApp: Color {
         return Color(hex: "53B175")
     }
